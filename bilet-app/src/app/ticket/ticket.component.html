@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="card col-lg-3 mt-3 mx-3 bg-light" style="width: 18rem;" *ngFor="let ticket of tickets">
+        <img class="card-img-top" src="{{ticket.imageUrl}}" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title text-danger text-center">{{ticket.name}}</h3>
+          <p class="card-text">{{ticket.info}}</p>
+          <h2 class="text-danger text-center">{{ticket.price}} TL</h2>
+          <div class="col-md-6 mx-auto">
+    
+            <input type="number" min="1" id="quantity-{{ticket.id}}" class="form-control form-control-sm text-center col-sm" style="font-weight: 700;"
+                value="1">
+        </div>
+    </div>
+    <button class="btn btn-primary mt-2" (click)="addBasket(ticket)">Sepete Ekle</button>
+    
+    </div>
+   
+        </div>
+        
+        
+    
+
