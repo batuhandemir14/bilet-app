@@ -9,7 +9,7 @@ export class CartService {
   
 
   baskets:BasketModel[] = []
-  total:number = 0;
+  total:number =  0;
 
   constructor() { }
 
@@ -49,6 +49,6 @@ changeData(basket: BasketModel) {
   basket.quantity = quantity;
   this.baskets.push(basket);
   this.calc();
-
+  
 }
 }

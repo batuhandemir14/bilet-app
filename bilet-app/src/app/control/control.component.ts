@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-control',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -21,10 +25,15 @@ export class ControlComponent implements OnInit {
     const strtoplam = String(toplam); const onunbirlerbas = strtoplam.substring(strtoplam.length,strtoplam.length-1);
   
     if(onunbirlerbas == tcno.substring(10,11)) {
-      alert("doğru");
+      this.router.navigate(['/payment']);
+
     } else{
-      alert("yanlış");
+      alert("Hatalı kimlik numarası girdiniz");
     }
+  }
+
+  openPayment(){
+    this.router.navigate(['/payment']);
   }
 
 }
