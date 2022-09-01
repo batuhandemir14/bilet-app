@@ -1,4 +1,5 @@
 import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BasketModel } from '../model/basket';
 import { CartService } from '../services/cart.service';
 
@@ -14,7 +15,9 @@ export class BasketComponent implements OnInit, AfterContentChecked {
   
 
   constructor(
-    private cartService:CartService
+    private cartService:CartService,
+    private router:Router,
+    private route: ActivatedRoute,
   ) {
     
    }
@@ -43,6 +46,11 @@ export class BasketComponent implements OnInit, AfterContentChecked {
   changeData(basket: BasketModel) {
     this.cartService.changeData(basket);
 
+  }
+
+  addControl(){
+
+    this.router.navigate(['/control']);
   }
 
 }
