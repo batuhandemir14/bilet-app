@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
+import { AfterContentChecked,  Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BasketModel } from '../model/basket';
 import { CartService } from '../services/cart.service';

@@ -14,6 +14,7 @@ import { MatNativeDateModule} from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ControlComponent } from './control/control.component';
+import { OrderComponent } from './order/order.component';
 declare var $: any;
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ declare var $: any;
     TicketComponent,
     BasketComponent,
     HomeComponent,
-    ControlComponent
+    ControlComponent,
+    OrderComponent
   ],
   imports: [
     FormsModule,

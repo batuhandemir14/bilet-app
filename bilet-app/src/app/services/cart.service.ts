@@ -20,14 +20,8 @@ export class CartService {
 
   //  this.router.navigate(['/basket']);
 
-}
-deleteProduct(basket: BasketModel) {
 
-  let index = this.baskets.indexOf(basket);
-  this.baskets.splice(index, 1);
-  this.calc();
-
-
+  
 }
 calc() {
   this.total = 0
@@ -40,6 +34,17 @@ calc() {
 
 }
 
+deleteProduct(basket: BasketModel) {
+
+  let index = this.baskets.indexOf(basket);
+  this.baskets.splice(index, 1);
+  this.calc();
+
+
+}
+
+
+
 changeData(basket: BasketModel) {
   let quantity: number = parseInt((<HTMLInputElement>document.getElementById("basketQuantity-" + basket.ticket.id)).value);
 
@@ -51,4 +56,6 @@ changeData(basket: BasketModel) {
   this.calc();
   
 }
+
+
 }

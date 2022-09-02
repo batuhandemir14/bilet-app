@@ -8,9 +8,14 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit, AfterContentChecked {
+  
 
   baskets:BasketModel[] = [];
   total: number = 0;
+  values = '';
+  onKey(value: string) {
+    this.values += value + ' | ';
+  }
 
   constructor(
     private cartService:CartService,
