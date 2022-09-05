@@ -2,11 +2,11 @@
     
         <div class="container bg-light d-md-flex align-items-center">
             <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
-                <div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span><span class="ps-1"></span>
+                <div class="fw-bolder mb-4"><span class="ps-1"></span>
                 </div>
                 <div class="d-flex flex-column">
                     <div class="d-flex align-items-center justify-content-between text"> <span class="">Toplam</span>
-                        <span class="fas fa-dollar-sign"><span class="ps-1"></span></span> </div>
+                         </div>
                     <div [innerText]="this.total | currency: 'TRY': 'symbol-narrow':'1.2-2'"
                         class="btn btn-primary w-100"
                         class="d-flex align-items-center justify-content-between text mb-4"> <span>Total</span> <span
@@ -14,7 +14,7 @@
                     <div class="border-bottom mb-4"></div>
                     <div *ngFor="let basket of baskets let index = index" class="d-flex flex-column mb-4"> <span
                             class="far fa-file-alt text"><span class="ps-1">Bilet:</span></span><span
-                            class="ps-1">{{basket.quantity}} adet {{basket.ticket.name}} bileti </span> </div>
+                            class="">{{basket.quantity}} adet {{basket.ticket.name}} bileti </span> </div>
                     <div class="d-flex flex-column mb-5"> <span class="far fa-calendar-alt text"><span
                                 class="ps-2">Tarih:</span></span> <span class="ps-1">{{values}}</span> </div>
                     <div class="d-flex align-items-center justify-content-between text mt-5">
@@ -80,7 +80,7 @@
                             </div>
                             <div class="col-12 px-md-5 px-4 mt-2">
                                 <div [innerText]="this.total | currency: 'TRY': 'symbol-narrow':'1.2-2'"
-                                    class="btn btn-primary w-100">Öde</div>
+                                    class="btn btn-primary w-100" (click)="addPay()"  >Öde</div>
                             </div>
                         </div>
                     </form>

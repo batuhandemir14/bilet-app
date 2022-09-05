@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-control',
@@ -7,13 +8,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./control.component.scss']
 })
 export class ControlComponent implements OnInit {
+  total: number = 0;
+  
 
   constructor(
+    private cartService:CartService,
     private router:Router,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterContentChecked(): void {
+    this.total = this.cartService.total;
   }
 
   tckimlikkontorolu(tcno:any) {
@@ -33,7 +41,11 @@ export class ControlComponent implements OnInit {
   }
 
   openPayment(){
+    this.cartService.total = this.cartService.total*2
     this.router.navigate(['/payment']);
+    
   }
 
-}
+ 
+  }
+
