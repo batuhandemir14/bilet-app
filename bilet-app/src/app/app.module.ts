@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ControlComponent } from './control/control.component';
 import { OrderComponent } from './order/order.component';
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
 declare var $: any;
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ declare var $: any;
     BasketComponent,
     HomeComponent,
     ControlComponent,
-    OrderComponent
+    OrderComponent,
+    
   ],
   imports: [
     FormsModule,
@@ -35,6 +38,14 @@ declare var $: any;
     MatInputModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      closeButton:true,
+      progressBar:true,
+    
+    }
+    )
     
 
     

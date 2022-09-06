@@ -1,5 +1,6 @@
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BasketModel } from '../model/basket';
 import { CartService } from '../services/cart.service';
 
@@ -15,13 +16,14 @@ export class PaymentComponent implements OnInit, AfterContentChecked {
   total: number = 0;
   values = '';
   onKey(value: string) {
-    this.values += value + ' | ';
+    this.values = value;
   }
 
   constructor(
     private cartService:CartService,
     private router:Router,
     private route: ActivatedRoute,
+    private toastrService:ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -33,8 +35,10 @@ export class PaymentComponent implements OnInit, AfterContentChecked {
   }
 
   addPay() {
+    this.toastrService.success("Ödeme Başarılı");
 
     this.router.navigate(['/order']);
+    
 
 }
 

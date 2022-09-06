@@ -1,0 +1,9 @@
+<div class="container" >
+    <h2>Siparişlerim</h2>
+     <ul class="list-group list-group-horizontal-lg" *ngFor="let basket of baskets let index = index">
+    <li class="list-group-item">{{index+1}}</li>
+    <li class="list-group-item">{{basket.quantity}} adet {{basket.ticket.name}} bileti</li>
+    <li class="list-group-item">{{values}}</li>
+  </ul>
+
+  </div>
